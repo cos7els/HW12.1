@@ -6,14 +6,14 @@ public class CustomList<T> {
         initialize();
     }
 
-    public void add(Object o) {
+    public void add(T o) {
         if (this.current == this.data.length) {
             this.increaseSize();
         }
         this.data[current++] = o;
     }
 
-    public void add(int index, Object o) {
+    public void add(int index, T o) {
         if (this.checkIndex(index)) {
             this.shiftForward(index);
             this.data[index] = o;
@@ -27,11 +27,11 @@ public class CustomList<T> {
         initialize();
     }
 
-    public boolean contains(Object o) {
+    public boolean contains(T o) {
         return indexOf(o) >= 0;
     }
 
-    public int indexOf(Object o) {
+    public int indexOf(T o) {
         int index = -1;
         for (int i = 0; i < this.data.length; i++) {
             if (o.equals(this.data[i])) {
@@ -55,7 +55,7 @@ public class CustomList<T> {
         }
     }
 
-    public void set(int index, Object o) {
+    public void set(int index, T o) {
         if (this.checkIndex(index)) {
             this.data[index] = o;
         } else {
@@ -74,7 +74,7 @@ public class CustomList<T> {
         }
     }
 
-    public void remove(Object o) {
+    public void remove(T o) {
         this.remove(this.indexOf(o));
     }
 
